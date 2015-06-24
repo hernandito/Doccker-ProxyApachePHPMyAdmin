@@ -31,6 +31,9 @@ RUN \
   rm -rf /var/lib/apt/lists/*
   
 # Enable proxy
+RUN apt-get update
+RUN apt-get install -y php5_mysql
+
 RUN \
   a2enmod proxy proxy_http proxy_ajp rewrite deflate substitute headers proxy_balancer proxy_connect proxy_html ssl xml2enc 
 RUN \
